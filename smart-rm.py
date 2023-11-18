@@ -1,5 +1,4 @@
 
-import uvicorn
 
 async def app(scope, receive, send):
     await send({

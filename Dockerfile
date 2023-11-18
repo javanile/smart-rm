@@ -6,4 +6,4 @@ RUN pip3 install -r /smart-rm/requirements.txt && rm -f /smart-rm/requirements.t
 
 COPY smart-rm.py /smart-rm/
 
-CMD [ "python3", "smart-rm/smart-rm.py" ]
+CMD [ "uvicorn smart-rm:smart-rm:app", "--host", "0.0.0.0", "--port", "5005", "--log-level", "info" ]
