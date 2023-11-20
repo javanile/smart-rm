@@ -12,9 +12,3 @@ async def app(scope, receive, send):
         'type': 'http.response.body',
         'body': b'Hello, world!',
     })
-
-
-if __name__ == "__main__":
-    config = uvicorn.Config("smart-rm:app", port=5005, host="0.0.0.0", log_level="info")
-    server = uvicorn.Server(config)
-    server.run()

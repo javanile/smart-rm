@@ -1,9 +1,9 @@
 FROM python:3.12.0
 
-COPY requirements.txt /smart-rm/
+COPY requirements.txt /
 
-RUN pip3 install -r /smart-rm/requirements.txt && rm -f /smart-rm/requirements.txt
+RUN pip3 install -r requirements.txt && rm -f requirements.txt
 
-COPY smart-rm.py /smart-rm/
+COPY smart-rm.py /
 
-CMD [ "uvicorn smart-rm:smart-rm:app", "--host", "0.0.0.0", "--port", "5005", "--log-level", "info" ]
+CMD [ "uvicorn", "smart-rm:smart-rm:app", "--host", "0.0.0.0", "--port", "5005", "--log-level", "info" ]
