@@ -4,6 +4,8 @@ COPY requirements.txt /
 
 RUN pip3 install -r requirements.txt && rm -f requirements.txt
 
-COPY smart-rm.py /
+WORKDIR /app
 
-CMD [ "uvicorn", "smart-rm:smart-rm:app", "--host", "0.0.0.0", "--port", "5005", "--log-level", "info" ]
+COPY main.py /app
+
+CMD [ "uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5005", "--log-level", "info" ]

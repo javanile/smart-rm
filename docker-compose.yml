@@ -3,7 +3,17 @@ version: "3"
 services:
   smart-rm:
     build: .
+    command:
+      - "uvicorn"
+      - "main:app"
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "5005"
+      - "--log-level"
+      - "info"
+      #- "--reload"
     volumes:
-      - ./:/smart-rm
+      - ./:/app
     ports:
       - 5005:5005
